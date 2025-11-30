@@ -7,12 +7,11 @@ class Operador extends Pessoa
     private int $codOperador;
     private int|null $idPessoa;
     private string $senha;
-    private PDO $dbConnection;
+
 
     public function __construct(PDO $dbConnection)
     {
-
-        $this->dbConnection = $dbConnection;
+        parent::__construct($dbConnection);
     }
 
     public function setarDados(int| null $idPessoa, int $senha, int $codOperador)
@@ -70,9 +69,12 @@ class Operador extends Pessoa
             return false;
         }
 
-        if (password_verify($senha, $dadosOperador->senha)) {
+        /*if (password_verify($senha, $dadosOperador->senha)) {
             return true;
         }
+        */
+
+        if ($senha == $dadosOperador->senha) return true;
 
         return false;
     }
@@ -90,5 +92,10 @@ class Operador extends Pessoa
         } catch (PDOException $error) {
             return $error->getMessage();
         }
+    }
+
+    public function getDadosPessoas(int $idPessoa)
+    {
+        return parent::getDadosPessoas($idPessoa);
     }
 }

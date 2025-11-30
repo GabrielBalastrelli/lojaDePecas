@@ -4,11 +4,11 @@ class Pessoa
 {
     private int $idPessoa;
     private string $nome;
-    private PDO $dbConnection;
+    public PDO $dbConnection;
 
-    public function __construct(string $nome, PDO $dbConnection)
+    public function __construct(PDO $dbConnection)
     {
-        $this->nome = $nome;
+
         $this->dbConnection =  $dbConnection;
     }
 

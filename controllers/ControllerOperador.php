@@ -32,12 +32,12 @@ class ControllerOperador
 
                     $dadosOperador = $operador->getLogin($codOperador);
 
-                    $pessoa = $operador->getDadosPessoas($dadosOperador->id_pessoa);
+                    $pessoa = $operador->getDadosPessoas($dadosOperador->pessoa_id);
 
                     $_SESSION["nome"] = $pessoa->nome;
                     $_SESSION["cd"] =   $codOperador;
 
-                    echo $_SESSION["nome"];
+                    echo  $_SESSION["cd"];
                     exit();
                 }
 
