@@ -10,25 +10,27 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Produtos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Emitir Nota</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Cadastrar Cliente</a>
-                </li>
-            </ul>
-
-            <?php if (isset($_SESSION["lojaPecas"]["cd"])) { ?>
+        <?php
+        if (isset($_SESSION["cd"])) { ?>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.php?url=dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?url=produtos">Produtos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Emitir Nota</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Cadastrar Cliente</a>
+                    </li>
+                </ul>
+            <?php } ?>
+            <?php if (isset($_SESSION["cd"])) { ?>
                 <a href="logout.php" class="btn btn-danger">Sair</a>
             <?php } ?>
-        </div>
+            </div>
     </div>
 </nav>

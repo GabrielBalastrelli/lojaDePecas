@@ -37,7 +37,7 @@ class ControllerOperador
                     $_SESSION["nome"] = $pessoa->nome;
                     $_SESSION["cd"] =   $codOperador;
 
-                    echo  $_SESSION["cd"];
+                    header("Location: /lojaDePecas/public/index.php?url=dashboard");
                     exit();
                 }
 

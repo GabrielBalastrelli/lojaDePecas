@@ -12,6 +12,7 @@ session_start();
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <script src="../public/js/bootstrap.bundle.js"></script>
     <script src="../public/js/mostrarSenha.js" defer></script>
+    <script src="../public/js/excluir.js" defer></script>
     <title>Loja de Peças</title>
 </head>
 
@@ -33,6 +34,33 @@ session_start();
                 require_once __DIR__ . "/../controllers/ControllerOperador.php";
                 $controllerOperador = new ControllerOperador($dbConfig->connection());
                 $controllerOperador->switchController($partes[0]);
+                break;
+            case 'dashboard':
+                require_once __DIR__ . "/../controllers/ControllerDashboard.php";
+                $controllerDash = new ControllerDashboard($dbConfig->connection());
+                $controllerDash->switchController($partes[0]);
+                break;
+            case 'cadastroProduto':
+                require_once __DIR__ . "/../controllers/ControllerProduto.php";
+                $controllerProd = new ControllerProduto(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'produtos':
+                require_once __DIR__ . "/../controllers/ControllerProduto.php";
+                $controllerProd = new ControllerProduto(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'listarProdutos':
+                require_once __DIR__ . "/../controllers/ControllerProduto.php";
+                $controllerProd = new ControllerProduto(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'excluirProd':
+                echo "aaa";
+                exit();
+                require_once __DIR__ . "/../controllers/ControllerProduto.php";
+                $controllerProd = new ControllerProduto(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
                 break;
             default:
                 echo "404";
