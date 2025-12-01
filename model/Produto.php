@@ -49,7 +49,7 @@ class Produto
             }
 
 
-            $sql = "UPDATE Produtos SET nome = :nome, preco = :preco, img = :img WHERE id_produto = :id_produto";
+            $sql = "UPDATE Produto SET nome = :nome, preco = :preco, img = :img WHERE id_produto = :id_produto";
 
             $stmt = $this->dbConnection->prepare($sql);
             $stmt->bindParam(":nome", $nome);
@@ -69,7 +69,7 @@ class Produto
     public function deleteProdutc(int $id_produto)
     {
         try {
-            $sql = "DELETE FROM Produtos WHERE id_produto = :id_produto LIMIT 1";
+            $sql = "DELETE FROM Produto WHERE id_produto = :id_produto LIMIT 1";
 
             $stmt =  $this->dbConnection->prepare($sql);
             $stmt->bindParam(":id_produto", $id_produto);
@@ -84,7 +84,7 @@ class Produto
     public function getProduto(int $id_produto)
     {
         try {
-            $sql = "SELECT * FROM Produtos WHERE id_produto = :id_produto LIMIT 1";
+            $sql = "SELECT * FROM Produto  WHERE id_produto = :id_produto LIMIT 1";
 
             $stmt =  $this->dbConnection->prepare($sql);
             $stmt->bindParam(":id_produto", $id_produto);

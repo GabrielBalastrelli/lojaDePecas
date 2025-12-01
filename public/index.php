@@ -56,8 +56,16 @@ session_start();
                 $controllerProd->switchController($partes[0]);
                 break;
             case 'excluirProd':
-                echo "aaa";
-                exit();
+                require_once __DIR__ . "/../controllers/ControllerProduto.php";
+                $controllerProd = new ControllerProduto(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'editProd':
+                require_once __DIR__ . "/../controllers/ControllerProduto.php";
+                $controllerProd = new ControllerProduto(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'prodPut':
                 require_once __DIR__ . "/../controllers/ControllerProduto.php";
                 $controllerProd = new ControllerProduto(($dbConfig->connection()));
                 $controllerProd->switchController($partes[0]);
