@@ -12,6 +12,11 @@ class Pessoa
         $this->dbConnection =  $dbConnection;
     }
 
+    public function setarDados(string $nome)
+    {
+
+        $this->nome =  $nome;
+    }
     public function salvarPessoa()
     {
         if (!$this->validarDados($this->nome)) {
@@ -51,6 +56,35 @@ class Pessoa
             return $stmt->fetch(PDO::FETCH_OBJ);
         } catch (PDOException $error) {
             return $error->getMessage();
+        }
+    }
+
+    public function listarDadosPessoas()
+    {
+        try {
+            $sql = "SELECT * FROM Pessoa WHERE ";
+
+            $stmt = $this->dbConnection->prepare($sql);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_OBJ);
+        } catch (PDOException $error) {
+            return $error->getMessage();
+        }
+    }
+
+    public function deletarPessoa(int $idPessoa)
+    {
+        try {
+            $sql = "DELETE FROM Pessoa WHERE id_pessoa = :id_pessoa LIMIT 1";
+
+            $stmt =  $this->dbConnection->prepare($sql);
+            $stmt->bindParam(":id_pessoa", $idPessoa);
+            $stmt->execute();
+
+            return $idPessoa;
+        } catch (PDOException $error) {
+            return $error->getMessage() . $error->getCode();
         }
     }
 }

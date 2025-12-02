@@ -17,7 +17,7 @@
             <div class="card-body">
                 <h5 class="card-title">Cadastro de Cliente</h5>
                 <p class="card-text">Cadastre aqui os nossos novos clientes.</p>
-                <a href="" class="btn btn-primary">Cadastro de Cliente</a>
+                <a href="/lojaDePecas/public/index.php?url=cadastroClienteFisico" class="btn btn-primary">Cadastro de Cliente</a>
             </div>
         </div>
     </div>

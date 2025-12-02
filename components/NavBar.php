@@ -24,7 +24,7 @@
                         <a class="nav-link" href="#">Emitir Nota</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Cadastrar Cliente</a>
+                        <a class="nav-link" href="index.php?url=painelClientes">Clientes</a>
                     </li>
                 </ul>
             <?php } ?>

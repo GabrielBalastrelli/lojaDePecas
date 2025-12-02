@@ -70,6 +70,36 @@ session_start();
                 $controllerProd = new ControllerProduto(($dbConfig->connection()));
                 $controllerProd->switchController($partes[0]);
                 break;
+            case 'cadastroClienteFisico':
+                require_once __DIR__ . "/../controllers/ControllerCliente.php";
+                $controllerProd = new ControllerCliente(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'painelClientes':
+                require_once __DIR__ . "/../controllers/ControllerCliente.php";
+                $controllerProd = new ControllerCliente(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'listarCliente':
+                require_once __DIR__ . "/../controllers/ControllerCliente.php";
+                $controllerProd = new ControllerCliente(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'clienteExcluir':
+                require_once __DIR__ . "/../controllers/ControllerCliente.php";
+                $controllerProd = new ControllerCliente(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break; 
+            case 'editarCliente': 
+                require_once __DIR__ . "/../controllers/ControllerCliente.php";
+                $controllerProd = new ControllerCliente(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
+            case 'clientePut': 
+                require_once __DIR__ . "/../controllers/ControllerCliente.php";
+                $controllerProd = new ControllerCliente(($dbConfig->connection()));
+                $controllerProd->switchController($partes[0]);
+                break;
             default:
                 echo "404";
                 break;
