@@ -34,10 +34,10 @@
                         <td><?= number_format($dados->preco, 2, ",", ".") ?></td>
                         <td width="150px">
                             <a href="javascript:excluir(<?= $dados->id_produto ?>, 'excluirProd')" class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash">Excluir</i>
+                                <i class="bi bi-trash"></i>
                             </a>
                             <a href="/lojaDePecas/public/index.php?url=editProd/<?= $dados->id_produto ?>" class="btn btn-info btn-sm">
-                                <i class="fas fa-edit">Editar</i>
+                                <i class="bi bi-pencil"> </i>
                             </a>
                         </td>
                     </tr>

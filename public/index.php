@@ -16,12 +16,12 @@ session_start();
     <title>Loja de Peças</title>
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
     <?php
     include_once __DIR__ . "/../components/NavBar.php";
     ?>
 
-    <main class="container-fluid text-center  d-flex flex-column justify-content-center align-items-center">
+    <main class="container-fluid text-center flex-grow-1 d-flex flex-column justify-content-center align-items-center">
         <?php
         require_once __DIR__ . "/../config/dbConfig.php";
         $dbConfig = new DbConnection("localhost", "root", "", "loja_de_peças");
@@ -72,33 +72,48 @@ session_start();
                 break;
             case 'cadastroClienteFisico':
                 require_once __DIR__ . "/../controllers/ControllerCliente.php";
-                $controllerProd = new ControllerCliente(($dbConfig->connection()));
-                $controllerProd->switchController($partes[0]);
+                $controllerCliente  = new ControllerCliente(($dbConfig->connection()));
+                $controllerCliente->switchController($partes[0]);
                 break;
             case 'painelClientes':
                 require_once __DIR__ . "/../controllers/ControllerCliente.php";
-                $controllerProd = new ControllerCliente(($dbConfig->connection()));
-                $controllerProd->switchController($partes[0]);
+                $controllerCliente  = new ControllerCliente(($dbConfig->connection()));
+                $controllerCliente->switchController($partes[0]);
                 break;
             case 'listarCliente':
                 require_once __DIR__ . "/../controllers/ControllerCliente.php";
-                $controllerProd = new ControllerCliente(($dbConfig->connection()));
-                $controllerProd->switchController($partes[0]);
+                $controllerCliente  = new ControllerCliente(($dbConfig->connection()));
+                $controllerCliente->switchController($partes[0]);
                 break;
             case 'clienteExcluir':
                 require_once __DIR__ . "/../controllers/ControllerCliente.php";
-                $controllerProd = new ControllerCliente(($dbConfig->connection()));
-                $controllerProd->switchController($partes[0]);
-                break; 
-            case 'editarCliente': 
-                require_once __DIR__ . "/../controllers/ControllerCliente.php";
-                $controllerProd = new ControllerCliente(($dbConfig->connection()));
-                $controllerProd->switchController($partes[0]);
+                $controllerCliente  = new ControllerCliente(($dbConfig->connection()));
+                $controllerCliente->switchController($partes[0]);
                 break;
-            case 'clientePut': 
+            case 'editarCliente':
                 require_once __DIR__ . "/../controllers/ControllerCliente.php";
-                $controllerProd = new ControllerCliente(($dbConfig->connection()));
-                $controllerProd->switchController($partes[0]);
+                $controllerCliente  = new ControllerCliente(($dbConfig->connection()));
+                $controllerCliente->switchController($partes[0]);
+                break;
+            case 'clientePut':
+                require_once __DIR__ . "/../controllers/ControllerCliente.php";
+                $controllerCliente = new ControllerCliente(($dbConfig->connection()));
+                $controllerCliente->switchController($partes[0]);
+                break;
+            case 'indicadorTotProd':
+                require_once __DIR__ . "/../controllers/Indicador.php";
+                $controllerIndicador = new ControllerIndicador(($dbConfig->connection()));
+                $controllerIndicador->switchController($partes[0]);
+                break;
+            case 'efetuarVenda':
+                require_once __DIR__ . "/../controllers/ControllerVenda.php";
+                $controllerVenda = new ControllerVenda(($dbConfig->connection()));
+                $controllerVenda->switchController($partes[0]);
+                break;
+            case 'logout':
+                require_once __DIR__ . "/../controllers/ControllerDashboard.php";
+                $controllerVenda = new ControllerDashboard(($dbConfig->connection()));
+                $controllerVenda->switchController($partes[0]);
                 break;
             default:
                 echo "404";

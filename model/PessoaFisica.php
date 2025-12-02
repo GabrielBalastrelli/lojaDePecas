@@ -156,4 +156,20 @@ class PessoaFisica extends Pessoa
             return $error->getMessage() . $error->getCode();
         }
     }
+
+    public function recuperaTotalClientes()
+    {
+        try {
+            $sql = "SELECT COUNT(*) as totProd FROM pessoa_fisica";
+
+            $stmt = $this->dbConnection->prepare($sql);
+            $stmt->execute();
+
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $resultado['totProd'];
+        } catch (PDOException $error) {
+            return $error->getMessage();
+        }
+    }
 }

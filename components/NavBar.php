@@ -21,15 +21,18 @@
                         <a class="nav-link" href="index.php?url=produtos">Produtos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Emitir Nota</a>
-                    </li>
+                        <a class="nav-link" href="index.php?url=efetuarVenda">Emitir Nota</a>
+                    </li> 
                     <li class="nav-item">
                         <a class="nav-link" href="index.php?url=painelClientes">Clientes</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.php?url=indicadorTotProd">Indicadores</a>
+                    </li>
                 </ul>
-            <?php } ?>
+            <?php } ?> 
             <?php if (isset($_SESSION["cd"])) { ?>
-                <a href="logout.php" class="btn btn-danger">Sair</a>
+                <a href="index.php?url=logout" class="btn btn-danger">Sair</a>
             <?php } ?>
             </div>
     </div>

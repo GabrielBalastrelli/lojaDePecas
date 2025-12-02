@@ -1,6 +1,6 @@
 <?php
 
-class ControllerDashboard
+class ControllerVenda
 {
     private PDO $dbConfig;
     private string $casoDeUso;
@@ -13,13 +13,8 @@ class ControllerDashboard
     public function switchController(string $case)
     {
         switch ($case) {
-            case 'dashboard':
-                include __DIR__ . "/../views/Dashboard/dashboard.php";
-                break;
-            case 'logout':
-                session_unset();
-                session_destroy();
-                header("Location: /lojaDePecas/public/index.php?url=login");
+            case 'efetuarVenda':
+                include __DIR__ . "/../views/FaturaVenda/faturaVenda.php";
                 break;
             default:
                 echo "Controller não encontrado!";

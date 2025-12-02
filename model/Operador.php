@@ -14,7 +14,7 @@ class Operador extends Pessoa
         parent::__construct($dbConnection);
     }
 
-    public function setarDados(int| null $idPessoa, int $senha, int $codOperador)
+    public function setarDadosOperador(int| null $idPessoa, int $senha, int $codOperador)
     {
         $this->codOperador =  $codOperador;
         $this->idPessoa = $idPessoa;

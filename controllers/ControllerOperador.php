@@ -21,7 +21,7 @@ class ControllerOperador
                     $senha = $_POST["senha"] ?? null;
 
                     $operador = new Operador($this->dbConfig);
-                    $operador->setarDados(null, $senha,  $codOperador);
+                    $operador->setarDadosOperador(null, $senha,  $codOperador);
 
                     $inLogin = $operador->validarLogin($codOperador,  $senha);
 

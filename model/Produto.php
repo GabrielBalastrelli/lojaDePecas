@@ -84,7 +84,7 @@ class Produto
     public function getProduto(int $id_produto)
     {
         try {
-            $sql = "SELECT * FROM Produto  WHERE id_produto = :id_produto LIMIT 1";
+            $sql = "SELECT * FROM Produtos WHERE id_produto = :id_produto LIMIT 1";
 
             $stmt =  $this->dbConnection->prepare($sql);
             $stmt->bindParam(":id_produto", $id_produto);
@@ -117,5 +117,21 @@ class Produto
         }
 
         return true;
+    }
+
+    public function recuperaTotalProduto()
+    {
+        try {
+            $sql = "SELECT COUNT(*) as totProd FROM Produto";
+
+            $stmt = $this->dbConnection->prepare($sql);
+            $stmt->execute();
+
+            $resultado = $stmt->fetch(PDO::FETCH_ASSOC);
+
+            return $resultado['totProd'];
+        } catch (PDOException $error) {
+            return $error->getMessage();
+        }
     }
 }
